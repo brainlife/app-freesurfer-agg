@@ -1,0 +1,18 @@
+{
+    "outputs": [
+        "testdata/full/sub-0001/output",
+        "testdata/take2/sub-0001/output",
+        "testdata/mix2/sub-0001/output"
+    ],
+    "_inputs": [
+        {
+            "meta": { "subject": "0001", "session": "mix1", "run": "1"}
+        },
+        {
+            "meta": { "subject": "0001", "session": "mix1", "run": "2"}
+        },
+        {
+            "meta": { "subject": "0001", "session": "mix2", "run": "1"}
+        }
+    ]
+}
