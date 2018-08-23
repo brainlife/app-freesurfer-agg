@@ -174,7 +174,7 @@ with open('config.json') as config_f:
     plot["data"] = [data]
     plot["layout"] = {
         "yaxis": {
-            "title": "Mean (unit?)",
+            "title": "Mean (MR)",
         },
     }
     plots.append(plot)
