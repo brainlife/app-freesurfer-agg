@@ -140,43 +140,86 @@ with open('config.json') as config_f:
     plots = []
 
     data = create_data(aseg_voxels)
-    data["name"] = "Voxels";
+    data["name"] = "aseg_voxels";
     plot = {}
     plot["type"] = "plotly"
     plot["name"] = "Aseg Voxels"
     plot["data"] = [data]
     plot["layout"] = {
         "yaxis": {
-            "title": "Voxels",
+            "title": "Mean (voxels)",
             #"range": [0, 1],
         },
     }
     plots.append(plot)
 
     data = create_data(aseg_volume)
-    data["name"] = "Mean";
+    data["name"] = "aseg_volume";
     plot = {}
     plot["type"] = "plotly"
     plot["name"] = "Aseg Volume"
     plot["data"] = [data]
     plot["layout"] = {
         "yaxis": {
-            "title": "mm3",
+            "title": "Mean (mm3)",
+        },
+    }
+    plots.append(plot)
+
+    data = create_data(aseg_norm_mean)
+    data["name"] = "aseg_norm_mean";
+    plot = {}
+    plot["type"] = "plotly"
+    plot["name"] = "Aseg Intensity Norm"
+    plot["data"] = [data]
+    plot["layout"] = {
+        "yaxis": {
+            "title": "Mean (unit?)",
         },
     }
     plots.append(plot)
 
     data_l = create_data(aparc_l_thick)
-    data_l["name"] = "LH";
+    data_l["name"] = "Left";
     data_r = create_data(aparc_r_thick)
-    data_r["name"] = "RH";
+    data_r["name"] = "Right";
     plot = {}
     plot["type"] = "plotly"
     plot["name"] = "Aparc Mean Thickness"
     plot["data"] = [data_l, data_r]
     plot["layout"] = {
         "yaxis": {
-            "title": "mm",
+            "title": "Mean (mm)",
+        },
+    }
+    plots.append(plot)
+
+    data_l = create_data(aparc_l_gvol)
+    data_l["name"] = "Left";
+    data_r = create_data(aparc_r_gvol)
+    data_r["name"] = "Right";
+    plot = {}
+    plot["type"] = "plotly"
+    plot["name"] = "Aparc Gray Matter Volume"
+    plot["data"] = [data_l, data_r]
+    plot["layout"] = {
+        "yaxis": {
+            "title": "Mean (mm3)",
+        },
+    }
+    plots.append(plot)
+
+    data_l = create_data(aparc_l_area)
+    data_l["name"] = "Left";
+    data_r = create_data(aparc_r_area)
+    data_r["name"] = "Right";
+    plot = {}
+    plot["type"] = "plotly"
+    plot["name"] = "Aparc Surface Area"
+    plot["data"] = [data_l, data_r]
+    plot["layout"] = {
+        "yaxis": {
+            "title": "Mean (mm2)",
         },
     }
     plots.append(plot)
